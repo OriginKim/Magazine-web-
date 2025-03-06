@@ -1,0 +1,225 @@
+body {
+  font: caption;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 고정 높이 대신 최소 높이 설정 */
+  margin: 0;
+  background-color: #ffffff;
+  overflow: auto;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 30%;
+  background-image: url('./message_cover.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+  animation: text-focus-in 0.6s ease-out; 
+  margin-top: 70px;
+}
+
+.artistname {
+  font-family: 'Maven Pro', sans-serif;
+  letter-spacing: 2px; /*글자자간 */
+  animation: text-focus-in 0.6s ease-out; 
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.info {
+  font-size: 12px;
+  text-align: center;
+  word-break: keep-all; /* 단어가 중간에 잘리지 않도록 */
+  margin-bottom: 40px;
+  animation: text-focus-in 0.6s ease-out; 
+  margin-top: 12px;
+}
+
+.square-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap; /* 작은 화면에서 사각형들이 자동으로 줄 바뀜 */
+  animation: slide-up 1s ease-out;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  margin-bottom: 20px; /* 앨범들 사이 간격 */
+  
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10%;
+  background-color: #ccc;
+  margin-left: 8px;
+  margin-right: 8px;
+  
+}
+
+.square1 {
+  background-image: url('./cover1.jpeg');
+}
+
+.square2 {
+  background-image: url('./cover2.jpeg');
+}
+
+.square3 {
+  background-image: url('./cover3.jpeg');
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* 링크의 텍스트 색상을 상속받도록 */
+}
+
+.album-name {
+  font-family: 'Maven Pro', sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: rgb(77, 77, 77);
+  font-size: 12px;
+}
+
+.footer-text{
+  margin-top: 90px;
+  font-size: 12px;
+  margin-bottom: 50px;
+  color: rgb(73, 73, 121);
+  
+  
+}
+
+.footer-text .bold {
+  font-weight: bold;
+}
+
+
+
+/* 애니메이션 */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+/* 태블릿(768px 이하) */
+@media (max-width: 768px) {
+
+ 
+  .circle {
+    width: 150px;
+    height: 150px; /* 태블릿에서 비율 유지 */
+  }
+
+  .square-container {
+    flex-direction: row;
+    align-items: center; /* 가운데 정렬 */
+  }
+
+  .album {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .square {
+    width: 140px; /* 너비를 100%로 설정하여 전체 너비 차지 */
+    height: 140px;
+    aspect-ratio: 1 / 1; /* 비율을 유지해 정사각형 모양을 유지 */
+  }
+
+  .album-name{
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 12px;
+  }
+
+  .footer-text{
+    margin-top: 60px;
+    font-size: 12px;
+    margin-bottom: 50px;
+    color: rgb(73, 73, 121);
+    
+    
+  }
+  
+  .footer-text .bold {
+    font-weight: bold;
+  }
+  
+  
+
+}
+
+/* 모바일(480px 이하) */
+@media (max-width: 480px) {
+
+  .circle {
+    width: 60px;
+    height: 60px; /* 모바일에서 비율 유지 */
+  }
+
+  .square {
+    width: 140px;
+    height: 140px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .album {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+
+  .album-name{
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 12px;
+  }
+
+  .footer-text{
+    margin-top: 60px;
+    font-size: 12px;
+    margin-bottom: 50px;
+    color: rgb(73, 73, 121);
+    
+    
+  }
+  
+  .footer-text .bold {
+    font-weight: bold;
+  }
+  
+  
+
+}
